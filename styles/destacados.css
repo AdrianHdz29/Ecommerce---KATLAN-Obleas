@@ -1,0 +1,193 @@
+/* ==================== DEBUG VISUAL ==================== */
+/* Herramienta para ver bordes de elementos durante desarrollo */
+/* .articulos *{
+    outline: 2px solid rgb(170, 59, 59);
+} */
+
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+/* Estilos base para la sección de artículos */
+.articulos {
+    margin: clamp(55px, calc(5vw - 2px), 80px) 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==================== TÍTULO DE SECCIÓN ==================== */
+/* Estilos para el título principal */
+.articulos p.arti-title{
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+/* ==================== CONTENEDOR DE BOTONES ==================== */
+/* Estilos para el grupo de botones de filtrado/colección */
+.articulos div.colec-btn{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+/* ==================== BOTONES DE FILTRADO ==================== */
+/* Estilos base para los botones de opciones */
+.articulos div.colec-btn button {
+    background-color: #ffffff;
+    border: 3px solid #aaaaaa;
+    color: #aaaaaa;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 0.4em 1em;
+    width: fit-content;
+    transition: 0.5s;
+}
+
+/* Efecto hover para botones */
+.articulos div.colec-btn button:hover {
+    border: 3px solid #8a8a8a;
+    color: #8a8a8a;
+    box-shadow: 0 0 5px 0 #00000067;
+}
+
+/* Estilo para botón seleccionado */
+.articulos div.colec-btn button.selected-op {
+    border-color: #1d1d1d;
+    color: #1d1d1d;
+    font-weight: 700;
+    box-shadow: 0 0 6px 0 #00000067;
+}
+
+/* ==================== GRID DE PRODUCTOS ==================== */
+/* Contenedor grid para los artículos */
+.articulos div.grid-arti {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    justify-content: center;
+    margin: 4vh 0;
+}
+
+/* ==================== ITEMS DE PRODUCTO ==================== */
+/* Estilos para cada card de producto */
+.articulos div.grid-arti div.producto-item {
+    width: 278px;
+    height: 328px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+/* Imagen del producto */
+.articulos div.grid-arti div.producto-item img {
+    width: 172px;
+    height: 186px;
+}
+
+/* Nombre del producto */
+.articulos div.grid-arti div.producto-item p.p-name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+/* Contenedor precio/peso */
+.articulos div.grid-arti div.producto-item div {
+    width: 230px;
+    height: fit-content;
+    margin: 3px 0;
+    display: flex;
+    justify-content: space-between; 
+}
+
+/* Texto de precio */
+.articulos div.grid-arti div.producto-item div p.p-price {
+    font-size: 16px;    
+    font-weight: 800;
+    left: 0;
+}
+
+/* Texto de peso/gramaje */
+.articulos div.grid-arti div.producto-item div p.p-grams {
+    font-size: 14px;
+    font-weight: 600;
+    color: #00000050;
+    right: 0;
+}
+
+/* ==================== BOTÓN DE COMPRA ==================== */
+/* Estilos para el botón "Agregar al carrito" */
+.articulos div.grid-arti div.producto-item button {
+    width: 230px;
+    height: 32px;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+/* Efecto hover para botón */
+.articulos div.grid-arti div.producto-item button:hover {
+    background-color: #ffffff;
+    border: 3px solid #1d1d1d;
+    color: #1d1d1d;
+}
+
+/* Efecto active (al hacer clic) */
+.articulos div.grid-arti div.producto-item button:active {
+    background-color: #F89A9E;
+    border: 3px solid #1d1d1d;
+    color: #1d1d1d
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+/* Ajustes para pantallas medianas (1230px) */
+@media screen and (max-width: 1230px) {
+    .articulos div.grid-arti {
+        grid-template-columns: repeat(3, 300px);
+    }
+}
+
+/* Ajustes para tablets (930px) */
+@media screen and (max-width: 930px) {
+    .articulos div.grid-arti {
+        grid-template-columns: repeat(2, 300px);
+    }
+}
+
+/* Ajustes para móviles (600px) */
+@media screen and (max-width: 600px) {
+    .articulos div.colec-btn button {
+        border: 2px solid #aaaaaa;
+    }
+    .articulos div.colec-btn button.selected-op {
+        border: 2px solid #1d1d1d;
+        box-shadow: 0 0 4px 0 #00000067;
+    }
+    .articulos div.grid-arti {
+        grid-template-columns: repeat(1, 300px);
+    }
+    .articulos p.arti-title{
+        font-size: 26px;
+        width: 322px;
+    }
+    .articulos div.colec-btn {
+        width: 330px;
+    }
+    .articulos div.colec-btn button {
+        font-size: 14px;
+    }
+}

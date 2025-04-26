@@ -1,0 +1,236 @@
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+/* Estilos base para la sección de categorías */
+.cate-s {
+    margin: clamp(55px, calc(5vw - 2px), 80px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ==================== TÍTULO DE CATEGORÍAS ==================== */
+/* Estilo para el título principal de la sección */
+.cate-s p.title-cate {
+    width: 768px;
+    font-family: 'PlayfairDisplay', serif;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+/* ==================== LISTA DE CATEGORÍAS ==================== */
+/* Contenedor de la lista de categorías */
+.cate-s ul {
+    /* background-color: blue; */ /* Debug visual */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==================== ITEMS DE CATEGORÍA ==================== */
+/* Estilos para cada elemento de categoría */
+.cate-s ul li {
+    /* background-color: #ffe6b3; */ /* Debug visual */
+    list-style: none;
+    padding: 20px;
+    margin: 0 10px;
+    width: clamp(260px, calc(25vw + 8px), 368px);
+    height: clamp(190px, calc(16vw + 10px), 240px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* ==================== CONTENEDOR DE TEXTO ==================== */
+/* Estilos para el bloque de texto dentro de cada categoría */
+.cate-s ul li div.cate-ctext {
+    /* background: palevioletred; */ /* Debug visual */
+    position: relative;
+    z-index: 2;
+    padding-left: 10px;
+}
+
+/* ==================== SUBTÍTULO ==================== */
+/* Estilo para el texto secundario */
+.cate-s ul li div p.sub {
+    /* background-color: rgb(140, 204, 121); */ /* Debug visual */
+    margin: 0;
+    padding: 0;
+    font-size: clamp(12px, calc(1vw + 1px), 15px);
+    font-weight: 300;
+    color: black;
+    text-align: left;
+}
+
+/* ==================== TÍTULO PRINCIPAL ==================== */
+/* Estilo para el texto principal del item */
+.cate-s ul li div p.p-text {
+    /* background-color: rgb(58, 202, 14); */ /* Debug visual */
+    font-size: clamp(19px, calc(2vw - 3px), 25px);
+    font-weight: 700;
+    color: black;
+    text-align: left;
+}
+
+/* ==================== ENLACE ==================== */
+/* Estilos para los links de categoría */
+.cate-s ul li div a {
+    /* background-color: rgb(58, 202, 14); */ /* Debug visual */
+    text-decoration: none;
+    font-size: clamp(14px, calc(1.5vw - 3px), 18px);
+    font-weight: 500;
+    color: black;
+    text-align: left;
+}
+
+/* ==================== EFECTO DE FLECHA ==================== */
+/* Animación para el icono de flecha en hover */
+.cate-s ul li div a span.a-decora-cate {
+    /* background-color: rgb(58, 202, 14); */ /* Debug visual */
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-weight: 700;
+}
+
+.cate-s ul li div a:hover span.a-decora-cate {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* ==================== CÍRCULO DECORATIVO ==================== */
+/* Elemento circular de fondo */
+.cate-s ul li div.cate-circle {
+    /* background-color: #f8c471; */ /* Debug visual */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: clamp(190px, calc(20vw - 8px), 280px);
+    height: clamp(190px, calc(20vw - 8px), 280px);
+    border-radius: 50%;
+    transform: translate(40%, 40%);
+    z-index: 1;
+}
+
+/* ==================== IMAGEN DE CATEGORÍA ==================== */
+/* Estilos para las imágenes de cada categoría */
+.cate-s ul li img {
+    position: absolute;
+    right: 0;
+    width: clamp(118px, 12vw, 172px);
+    height: clamp(118px, 12vw, 172px);
+    object-fit: contain;
+    z-index: 2;
+}
+
+/* ==================== COLORES DE FONDO ==================== */
+/* Asignación de colores para cada categoría */
+.item-1 {
+    background: #ffe1e4;
+}
+
+.item-2 {
+    background: #f4fce6;
+}
+
+.item-3 {
+    background: #fde7c2;
+}
+
+/* ==================== COLORES DE CÍRCULOS ==================== */
+/* Asignación de colores para los círculos decorativos */
+.cir-1 {
+    background: #ffb6bd;
+}
+
+.cir-2 {
+    background: #e5f7c3;
+}
+
+.cir-3 {
+    background: #fac66e;
+}
+
+/* ==================== VERSIÓN MÓVIL ==================== */
+@media screen and (max-width: 980px) {
+    /* Lista de categorías en móvil (scroll horizontal) */
+    .cate-s ul.cate-list {
+        display: flex;
+        width: clamp(200px, 82vw, 500px);
+        height: clamp(131px, calc(55vw + 2px), 326px);
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        align-items: stretch;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none;
+        gap: 1px;
+    }
+
+    /* Items de categoría en móvil */
+    .cate-s ul.cate-list li.cate-item {
+        width: clamp(200px, 82vw, 500px);
+        height: clamp(131px, calc(55vw + 2px), 326px);
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Paginación (puntos indicadores) */
+    .cate-pagination {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .cate-pagination .dot {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin: 0 1vw;
+        background-color: #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .cate-pagination .dot.active-car {
+        background-color: #F89A9E;
+    }
+
+    /* Ajustes responsivos para textos e imágenes */
+    .cate-s p.title-cate {
+        width: clamp(200px, 82vw, 700px);
+        font-size: clamp(18px, calc(7vw + 1px), 28px);
+    }
+    .cate-s ul li div.cate-circle {
+        width: clamp(150px, 65vw, 380px);
+        height: clamp(150px, 65vw, 380px);
+    }
+    .cate-s ul li img {
+        width: clamp(100px, 39vw, 295px);
+        height: clamp(100px, 39vw, 295px);
+    }
+    .cate-s ul li div p.sub {
+        font-size: clamp(9px, 3.6vw, 19px);
+    }
+    .cate-s ul li div p.p-text {
+        font-size: clamp(14px, 5.4vw, 28px);
+    }
+    .cate-s ul li div a {
+        font-size: clamp(10px, 4vw, 21px);
+    }
+    .cate-s ul li div.cate-ctext {
+        left: 4%;
+    }
+}

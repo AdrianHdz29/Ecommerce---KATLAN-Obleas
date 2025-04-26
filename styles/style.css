@@ -1,0 +1,305 @@
+/* ==================== ESTILOS GENERALES ==================== */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+span.icoplum {
+    background-color: #F89A9E;
+}
+
+.active {
+    color: #F89A9E !important;
+}
+
+.comp-v2 {
+    display: none !important;
+}
+
+/* ==================== ESTILOS HEADER/NAV ==================== */
+.nav {
+    display: flex;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: clamp(15px, 1.5vw, 20px);
+}
+
+.nav-list li.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.p-note-header,
+.p-nav-header {
+    padding: 0.8% 5%;
+    font-weight: 600;
+    align-items: center;
+}
+
+/* Dropdown Styles (exactamente como los tenías) */
+.dropdown-menu {
+    border-radius: 0 !important;
+    border: 0;
+    width: 220px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.25s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: all 0.25s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #F89A9E30;
+}
+
+.dropdown-menu .dropdown-item:active,
+.dropdown-menu .dropdown-item:focus {
+    background-color: #F89A9E;
+    color: white;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+/* ==================== ESTILOS FOOTER ==================== */
+.bg-footer {
+    background-color: #6EA399;
+    color: white;
+}
+
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+footer .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+footer .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+footer .col-md-3 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer-contact {
+    display: flex;
+    text-align: left;
+}
+
+.nav-contact {
+    display: flex;
+    text-align: left;
+    gap: clamp(10px, 3vw, 15px);
+}
+
+/* ==================== UTILIDADES ==================== */
+.flex-mod {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.w-ctrl-logo {
+    height: clamp(60px, 6vw, 100px);
+    width: auto;
+}
+
+.nav-overlay {
+    padding-left: clamp(25px, 2.5vw, 30px);
+}
+
+ul.nav-list.m-auto {
+    padding: 0;
+}
+
+.div-copy-inline {
+    display: inline;
+}
+
+/* ==================== TIPOGRAFÍA RESPONSIVA ==================== */
+/* (Tus valores clamp exactamente como los tenías) */
+.fs-v5 {
+    font-size: clamp(16px, 2vw, 22px);
+}
+
+.fs-nav {
+    font-size: clamp(16px, calc(2vw - 5px), 20px);
+}
+
+.fs-h4 {
+    font-size: clamp(18px, 2vw, 28px);
+}
+
+.fs-vi3 {
+    font-size: clamp(22px, 2vw, 30px);
+}
+
+.fs-vi5,
+.fs-v6 {
+    font-size: clamp(18px, 2vw, 20px);
+}
+
+/* ==================== COMPONENTES ==================== */
+.gad-flex {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(2px, 1.6vw, 16px);
+}
+
+.u-burble {
+    background-color: #F89A9E70;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ico-v {
+    font-size: clamp(3px, 0.8vw, 20px);
+}
+
+.grad-flex {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.btn-r {
+    margin-left: auto;
+    display: flex;
+}
+
+/* ==================== SECCIONES ==================== */
+section#highlights,
+section#categorias,
+section#destacados,
+section#tiendas {
+    margin: 0 clamp(100px, calc(10vw - 4px), 160px);
+}
+
+/* =================== Estilos de la sección HINGLIGTH ====================== */
+.cualid {
+    height: auto;
+    margin: clamp(55px, calc(5vw - 2px), 80px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cualid ul {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.cualid ul li {
+    list-style: none;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cualid ul li img {
+    width: clamp(80px, 7vw, 120px);
+    height: clamp(80px, 7vw, 120px);
+    transition: 0.5s;
+}
+
+.cualid ul li p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 1.8vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+/* =================== Estilos de la sección TIENDAS PARTICIPANTES ====================== */
+.tiendas-p {
+    height: auto;
+    margin: clamp(55px, calc(5vw - 2px), 80px) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tiendas-p p {
+    font-size: clamp(15px, calc(2vw - 6px), 28px);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.tiendas-p ul {
+    height: 100%;
+    margin-top: 3vh;
+    padding: 0;
+    gap: clamp(40px, calc(3vw + 1px), 50px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tiendas-p ul li {
+    list-style: none;
+    width: clamp(100px, calc(8vw + 10px), 160px);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tiendas-p ul li img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s;
+}

@@ -1,0 +1,211 @@
+/* ==================== ESTILOS DEL MAGIC NAVEGATION ==================== */
+/* Contenedor principal del magic nav */
+#magic-nav {
+    position: fixed;
+    z-index: 100; /* Menor prioridad que el footer */
+}
+
+/* ==================== ESTILOS DEL FOOTER ==================== */
+/* Asegura que el footer tenga mayor prioridad que el magic nav */
+#footer {
+    position: relative;
+    z-index: 999; /* Mayor que el magic nav */
+}
+
+/* ==================== CLASE DE UTILIDAD ==================== */
+/* Clase para ocultar elementos con transición */
+.hidden {
+    display: none !important;
+    transition: 5s;
+}
+
+/* ==================== CONTENEDOR MAGIC ==================== */
+/* Estilos base del contenedor magic */
+.magic {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-image: url('../assets/svg/magic980.svg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* ==================== LISTA DE ÍCONOS ==================== */
+/* Estilos para la lista de elementos del magic nav */
+.magic ul {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================== ELEMENTOS DE LA LISTA ==================== */
+/* Estilos para cada ítem de la lista */
+.magic ul li {
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+/* ==================== EFECTO DE BLOQUE ==================== */
+/* Efecto visual que aparece al interactuar */
+.magic ul li div.block-efect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 0;
+    transition: height 0.2s;
+}
+
+/* ==================== ENLACES ==================== */
+/* Estilos para los elementos clickeables */
+.magic ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+/* ==================== ÍCONOS ==================== */
+/* Estilos para los iconos del magic nav */
+.magic ul li a .m-ico-l {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    text-align: center;
+    transition: 0.5s;
+    color: black;
+}
+
+/* ==================== ESTADO ACTIVO ==================== */
+/* Estilos cuando un elemento está activo */
+.magic ul li.active-s a .m-ico-l {
+    color: #ffffff;
+    transform: translateY(-35px);
+}
+
+/* ==================== INDICADOR ACTIVO ==================== */
+/* Círculo que marca el elemento activo */
+.indicador {
+    position: absolute;
+    top: -50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #F89A9E;
+    transition: 0.5s;
+}
+
+/* Posicionamiento del indicador para cada elemento */
+.magic ul li:nth-child(1).active-s~.indicador {
+    transform: translateX(calc(-60px * 2));
+}
+.magic ul li:nth-child(2).active-s~.indicador {
+    transform: translateX(calc(-60px * 1));
+}
+.magic ul li:nth-child(3).active-s~.indicador {
+    transform: translateX(calc(60px * 0));
+}
+.magic ul li:nth-child(4).active-s~.indicador {
+    transform: translateX(calc(60px * 1));
+}
+.magic ul li:nth-child(5).active-s~.indicador {
+    transform: translateX(calc(60px * 2));
+}
+
+/* ==================== EFECTO AL ACTIVAR ==================== */
+/* Animación del bloque al activar un elemento */
+.magic ul li.active-s div.block-efect {
+    height: 0;
+}
+
+/* ==================== BADGE NUMÉRICO ==================== */
+/* Estilos para el indicador numérico */
+span.icoplum-mnav {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #F89A9E;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    box-sizing: border-box;
+    text-align: center;
+    top: 7px;
+    transition: 0.5s;
+}
+
+/* Estado activo del badge */
+.magic ul li.active-s a span span.icoplum-mnav {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* ==================== VERSIÓN PARA MÓVILES PEQUEÑOS ==================== */
+@media screen and (max-width: 360px) {
+    /* Ajustes específicos para pantallas muy pequeñas */
+    .magic {
+        background-image: url('../assets/svg/magic360.svg');
+    }
+
+    .magic ul {
+        width: 175px;
+    }
+
+    .magic ul li {
+        width: 35px;
+    }
+
+    .magic ul li a .m-ico-l {
+        font-size: 15px;
+    }
+
+    .indicador {
+        top: -30%;
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Recalcula posiciones para pantallas pequeñas */
+    .magic ul li:nth-child(1).active-s~.indicador {
+        transform: translateX(calc(-35px * 2));
+    }
+    .magic ul li:nth-child(2).active-s~.indicador {
+        transform: translateX(calc(-35px * 1));
+    }
+    .magic ul li:nth-child(3).active-s~.indicador {
+        transform: translateX(calc(35px * 0));
+    }
+    .magic ul li:nth-child(4).active-s~.indicador {
+        transform: translateX(calc(35px * 1));
+    }
+    .magic ul li:nth-child(5).active-s~.indicador {
+        transform: translateX(calc(35px * 2));
+    }
+}
